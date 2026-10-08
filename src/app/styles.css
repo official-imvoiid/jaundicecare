@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+/*
+  Design tokens. The default Tailwind palette is removed on purpose: every
+  colour on screen must be one of these.
+*/
+@theme {
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-paper: #f7f5f0;
+  --color-surface: #ffffff;
+  --color-sunken: #efece5;
+  --color-line: #ddd8cd;
+  --color-line-strong: #c9c3b6;
+
+  --color-ink: #1b2420;
+  --color-body: #37423d;
+  --color-muted: #66716b;
+
+  --color-brand: #17594a;
+  --color-brand-hover: #0f463a;
+  --color-brand-tint: #e3eee9;
+  --color-brand-line: #b9d3c9;
+
+  --color-warn: #8a4f0a;
+  --color-warn-ink: #4a2a05;
+  --color-warn-tint: #fbf0dc;
+  --color-warn-line: #e7c98f;
+  --color-warn-solid: #c77d15;
+
+  --color-danger: #a12b22;
+  --color-danger-ink: #5a1711;
+  --color-danger-tint: #fbe9e6;
+  --color-danger-line: #e6b5ae;
+
+  /*
+    Chart marks. The warm/good pair was run through a colour-vision validator on
+    a white surface: separation under protanopia/deuteranopia 11.0 (target 8),
+    normal vision 22.6 (floor 15), contrast above 3:1. Position and a signed
+    number always repeat what the colour says.
+  */
+  --color-chart-warm: #c77d15;
+  --color-chart-warm-track: #f3e2c4;
+  --color-chart-good: #0b7f66;
+  --color-chart-good-track: #d3e8e1;
+  --color-chart-grid: #e6e2d9;
+
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Noto Serif", serif;
+  --font-sans: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", "Noto Sans", "Nirmala UI", sans-serif;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Devanagari needs more room above and below the line */
+  html:lang(hi) body {
+    line-height: 1.75;
+  }
+
+  button:not(:disabled),
+  summary,
+  label:has(input[type="file"]),
+  label:has(input[type="radio"]) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-brand-tint);
+  }
+
+  dialog::backdrop {
+    background: rgb(27 36 32 / 0.55);
+  }
+}
+
+@layer components {
+  /* Headings: serif, regular weight */
+  .h-display {
+    font-family: var(--font-serif);
+    color: var(--color-ink);
+    font-weight: 400;
+    font-size: clamp(2rem, 4.6vw, 2.875rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .h-page {
+    font-family: var(--font-serif);
+    color: var(--color-ink);
+    font-weight: 400;
+    font-size: clamp(1.75rem, 3.4vw, 2.25rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .h-section {
+    font-family: var(--font-serif);
+    color: var(--color-ink);
+    font-weight: 400;
+    font-size: 1.625rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .h-label {
+    color: var(--color-ink);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1.4;
+  }
+
+  html:lang(hi) :is(.h-display, .h-page, .h-section) {
+    letter-spacing: 0;
+    line-height: 1.4;
+  }
+
+  .link {
+    color: var(--color-brand);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .link:hover {
+    color: var(--color-brand-hover);
+  }
+
+  .numeric {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.print-only {
+  display: none;
+}
+
+@media print {
+  body {
+    background: #ffffff;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block;
+  }
+
+  @page {
+    margin: 14mm;
+  }
+}
