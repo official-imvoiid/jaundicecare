@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 480" role="img" aria-label="Sample prescription sheet">
+  <rect width="360" height="480" fill="#fbfaf7"/>
+  <rect x="18" y="18" width="324" height="444" rx="6" fill="#ffffff" stroke="#c9c3b6"/>
+  <rect x="36" y="40" width="150" height="12" rx="2" fill="#17594a"/>
+  <rect x="36" y="60" width="210" height="7" rx="2" fill="#ddd8cd"/>
+  <rect x="36" y="74" width="170" height="7" rx="2" fill="#ddd8cd"/>
+  <line x1="36" y1="100" x2="324" y2="100" stroke="#c9c3b6"/>
+  <text x="36" y="146" font-family="Georgia, serif" font-size="34" fill="#1b2420">Rx</text>
+  <g fill="#66716b">
+    <rect x="36" y="176" width="230" height="8" rx="2"/>
+    <rect x="36" y="194" width="160" height="6" rx="2" fill="#c9c3b6"/>
+    <rect x="36" y="228" width="250" height="8" rx="2"/>
+    <rect x="36" y="246" width="140" height="6" rx="2" fill="#c9c3b6"/>
+    <rect x="36" y="280" width="190" height="8" rx="2"/>
+    <rect x="36" y="298" width="170" height="6" rx="2" fill="#c9c3b6"/>
+  </g>
+  <line x1="200" y1="408" x2="324" y2="408" stroke="#1b2420"/>
+  <path d="M212 398c10-22 18 6 26-10s14 12 24-6 16 14 30 2" fill="none" stroke="#17594a" stroke-width="2"/>
+  <rect x="236" y="418" width="88" height="6" rx="2" fill="#ddd8cd"/>
+  <text x="36" y="440" font-family="Segoe UI, sans-serif" font-size="11" fill="#66716b">Sample image for the demo</text>
+</svg>
