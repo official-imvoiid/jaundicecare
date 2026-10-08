@@ -1,0 +1,54 @@
+{
+  "version": "3.0",
+  "trainedOn": "2026-10-02",
+  "dataset": {
+    "total": 754,
+    "jaundice": 197,
+    "normal": 557,
+    "heldOutSamples": 6
+  },
+  "evaluation": {
+    "method": "5-fold cross-validation, 3 repeats",
+    "auc": 0.906,
+    "accuracy": 83.1,
+    "sensitivity": 82.9,
+    "specificity": 83.1
+  },
+  "threshold": 0.234,
+  "yellowRange": {
+    "low": 20.1,
+    "high": 35.1
+  },
+  "samples": [
+    {
+      "id": "sample-1",
+      "file": "samples/sample-1.jpg",
+      "label": "normal"
+    },
+    {
+      "id": "sample-2",
+      "file": "samples/sample-2.jpg",
+      "label": "jaundice"
+    },
+    {
+      "id": "sample-3",
+      "file": "samples/sample-3.jpg",
+      "label": "normal"
+    },
+    {
+      "id": "sample-4",
+      "file": "samples/sample-4.jpg",
+      "label": "jaundice"
+    },
+    {
+      "id": "sample-5",
+      "file": "samples/sample-5.jpg",
+      "label": "normal"
+    },
+    {
+      "id": "sample-6",
+      "file": "samples/sample-6.jpg",
+      "label": "jaundice"
+    }
+  ]
+}
